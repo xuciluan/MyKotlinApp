@@ -1,6 +1,7 @@
 package com.xiaoya.kotlinapp.mvp.impls
 
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.xiaoya.kotlinapp.mvp.IMvpView
 import com.xiaoya.kotlinapp.mvp.IPresenter
@@ -63,5 +64,48 @@ abstract class BaseFragment<out P:BasePresenter<BaseFragment<P>>>(contentLayoutI
         }
     }
 
-    //TODO 重写生命周期方法
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        presenter.onCreate(savedInstanceState)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        presenter.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        presenter.onSaveInstanceState(outState)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        presenter.onViewStateRestored(savedInstanceState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        presenter.onViewStateRestored(savedInstanceState)
+    }
 }

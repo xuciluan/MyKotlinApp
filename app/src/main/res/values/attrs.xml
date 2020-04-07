@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Switcher">
+        <attr name="on_color" format="color" />
+        <attr name="off_color" format="color"/>
+        <attr name="icon_color" format="color"/>
+        <attr name="android_checked" format="boolean"/>
+        <attr name="switch_height" format="dimension"/>
+        <attr name="switch_width" format="dimension"/>
+        <attr name="elevation" format="dimension"/>
+    </declare-styleable>
+</resources>

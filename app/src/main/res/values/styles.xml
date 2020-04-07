@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BaseSwitcher">
+        <item name="switch_width">@dimen/switcher_width</item>
+        <item name="switch_height">@dimen/switcher_height</item>
+        <item name="on_color">@color/switcher_on_color</item>
+        <item name="off_color">@color/switcher_off_color</item>
+        <item name="icon_color">@color/switcher_icon_color</item>
+        <item name="elevation">@dimen/switcher_elevation</item>
+    </style>
+
+    <style name="Switcher" parent="BaseSwitcher"/>
 </resources>

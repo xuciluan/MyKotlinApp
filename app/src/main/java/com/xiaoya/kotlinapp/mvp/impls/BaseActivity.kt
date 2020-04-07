@@ -2,7 +2,6 @@ package com.xiaoya.kotlinapp.mvp.impls
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.xiaoya.kotlinapp.mvp.IMvpView
 import com.xiaoya.kotlinapp.mvp.IPresenter
 import java.lang.reflect.ParameterizedType
@@ -18,7 +17,7 @@ import kotlin.reflect.jvm.jvmErasure
  * @desc:
  **/
 
-abstract class BaseActivity<out P:BasePresenter<BaseActivity<P>>>(contentLayoutId: Int) : IMvpView<P> ,AppCompatActivity(contentLayoutId) {
+abstract class BaseActivity<out P:BasePresenter<BaseActivity<P>>> : IMvpView<P> ,AppCompatActivity() {
 
     override val presenter : P
 
@@ -26,7 +25,6 @@ abstract class BaseActivity<out P:BasePresenter<BaseActivity<P>>>(contentLayoutI
         presenter = createPresenterkt()
         presenter.view = this
     }
-
     //todo : 什么是星投影？这段代码什么意思？？？
     fun createPresenterkt():P {
         sequence{
@@ -64,5 +62,46 @@ abstract class BaseActivity<out P:BasePresenter<BaseActivity<P>>>(contentLayoutI
         }
     }
 
-    //TODO 重写生命周期方法
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        presenter.onCreate(savedInstanceState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {}
+
+    override fun onStart() {
+        super.onStart()
+        presenter.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        presenter.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.onStop()
+    }
+
+    override fun onDestroy() {
+        presenter.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        presenter.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        onViewStateRestored(savedInstanceState)
+        presenter.onViewStateRestored(savedInstanceState)
+    }
 }

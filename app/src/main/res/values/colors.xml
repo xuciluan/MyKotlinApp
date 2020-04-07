@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="switcher_on_color">#48ea8b</color>
+    <color name="switcher_off_color">#ff4651</color>
+    <color name="switcher_icon_color">@android:color/white</color>
 </resources>

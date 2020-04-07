@@ -1,5 +1,8 @@
 package com.xiaoya.kotlinapp.mvp
 
+import android.content.res.Configuration
+import android.os.Bundle
+
 
 /**
  * @author : xuciluan@126.com
@@ -8,5 +11,21 @@ package com.xiaoya.kotlinapp.mvp
  **/
 
 interface ILifeCycle{
+    fun onCreate(savedInstanceState: Bundle?)
 
+    fun onSaveInstanceState(outState: Bundle)
+
+    fun onViewStateRestored(savedInstanceState: Bundle?)
+
+    fun onConfigurationChanged(newConfig: Configuration)
+
+    fun onDestroy()
+
+    fun onStart()
+
+    fun onStop()
+
+    fun onResume()
+
+    fun onPause()
 }

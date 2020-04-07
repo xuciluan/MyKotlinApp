@@ -6,13 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <!--<com.xiaoya.kotlinapp.other.Switcher-->
+        <!--android:id="@+id/switcher_x"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <com.xiaoya.kotlinapp.customview.QQRun
+        android:id="@+id/qq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.xiaoya.kotlinapp.customview.ColorTrackTextView
+        android:id="@+id/trackView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="helloWorldxoouoojnou"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 </android.support.constraint.ConstraintLayout>
