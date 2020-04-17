@@ -91,7 +91,7 @@ object AccountManager {
                     }
 
 
-    fun logout() = {
+    fun logout() =
         AuthService.deleteAuthorization(authId)
                 .doOnNext {
                     if (it.isSuccessful) {
@@ -103,7 +103,7 @@ object AccountManager {
                         throw HttpException(it)
                     }
                 }
-    }
+
 
     class AccountException(val authorizationRsp: AuthorizationRsp) : Exception("Already logged in.")
 
